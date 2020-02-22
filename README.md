@@ -10,7 +10,7 @@ Run instructions for iOS:
     • Have an Android emulator running (quickest way to get started), or a device connected.
     • cd "/Users/k0s02oi/Documents/selfRepos/ReactNavigationTutorial" && npx react-native run-android
     
- # Info
+ # Docs
  
  # NavigationContainer
         this is a component which manages the project navigation tree and contains the navigation state. this component must wrap all navigators structure.
@@ -27,5 +27,8 @@ Run instructions for iOS:
     
        * use React Context and wrap the navigator with a context provider.
        * use a render callback for the screen instead of specifying a component prop. (Note: we will need to ensure that we use React.memo or React.PureComponent for our screen components to avoid performance issues). 
+  
+  # Navigation between Screens
+    we will use the Navigation prop to navigate between the screens that is passed down to our screen components.
    
  
