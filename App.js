@@ -8,18 +8,27 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
+  View,
   Text
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import HomeScreen from "./components/homeScreen";
+import DetailsScreen from "./components/detailsScreen";
+
+const Stack = createStackNavigator();
 
 export default function App(){
   return (
-    <SafeAreaView>
-    <NavigationContainer>
-          <Text>Welcome to ReactNavigation Tutorial</Text> 
-    </NavigationContainer>
-    </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home">
+            { props => <HomeScreen {...props}/>}
+            </Stack.Screen> 
+          <Stack.Screen name="Details" component={DetailsScreen}  options={{title: 'Details Overview'}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
   )
 }
 
