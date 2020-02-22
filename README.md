@@ -30,5 +30,12 @@ Run instructions for iOS:
   
   # Navigation between Screens
     we will use the Navigation prop to navigate between the screens that is passed down to our screen components.
+    
+    navigation - this prop is passed in to every screen component in stack navigator.
+    navigate(screenName) - we call this function on navigation prop with the name of the route that we'd like to move the user to.
+    push(screenName) - allow us to express the intent to add another route regardless of the existing navigation history.
+    goBack() - this method will be used to be able to programatically trigger this behavior.
+    popToTop() - which goes back to the first screen in the stack.
+    
    
  
