@@ -28,4 +28,13 @@ Run instructions for iOS:
        * use React Context and wrap the navigator with a context provider.
        * use a render callback for the screen instead of specifying a component prop. (Note: we will need to ensure that we use React.memo or React.PureComponent for our screen components to avoid performance issues). 
    
+   # Pass Data to Routes
+   pass params to a route by putting them in an object as a second parameter to the navigation.navigate function.
+   
+   read the params in your screen component using route.params
+   
+   the navigation.setParams method allow us to update the params of the screen.
+   
+   we can also pass initial params to the screen using initialParams prop. if we didn't specify any params when navigating to the screen, the initialParams will be used.
+   
  
