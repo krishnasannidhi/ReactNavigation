@@ -23,7 +23,7 @@ export default function HomeScreen({navigation}){
                 onPress={()=> {
                     navigation.navigate('Details', {
                         itemId:123,
-                        otherParam: 'anything you want here',
+                        otherParam: 'from Home screen',
                         title: 'Details Header from Home Screen'
                     })
                     }}>
