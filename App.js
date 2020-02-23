@@ -15,6 +15,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer'
 
 import HomeScreen from "./components/homeScreen";
 import DetailsScreen from "./components/detailsScreen";
@@ -24,6 +25,8 @@ import SettingsStackScreen from './components/settingsStackScree';
 const Stack = createStackNavigator();
 
 const Tab  = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 export default function App(){
   return (
@@ -57,10 +60,16 @@ export default function App(){
              options={({route}) => ({title: route.params.title})}/>
         </Stack.Navigator>
         */}
-        <Tab.Navigator>
+        {/* <Tab.Navigator>
           <Tab.Screen name="Tab 1" component={HomeStackScreen}></Tab.Screen>
           <Tab.Screen name="Tab 2" component={SettingsStackScreen}></Tab.Screen>
-        </Tab.Navigator>
+        </Tab.Navigator> */}
+        <Drawer.Navigator>
+          <Drawer.Screen  name="Home" component={HomeScreen}/>
+          <Drawer.Screen  name="Details" component={DetailsScreen} initialParams={{
+            itemId:987
+          }}/>
+        </Drawer.Navigator>
       </NavigationContainer>
   )
 }
