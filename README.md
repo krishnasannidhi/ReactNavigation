@@ -18,7 +18,14 @@ we can pass additional props to a screen using the following approaches
 
 # Navigation between Screens
 we will use the Navigation prop to navigate between the screens that is passed down to our screen components.
-Pass Data to Routes
+
+navigation - this prop is passed in to every screen component in stack navigator.
+navigate(screenName) - we call this function on navigation prop with the name of the route that we'd like to move the user to.
+push(screenName) - allow us to express the intent to add another route regardless of the existing navigation history.
+goBack() - this method will be used to be able to programatically trigger this behavior.
+popToTop() - which goes back to the first screen in the stack.
+
+# Pass Data to Routes
 pass params to a route by putting them in an object as a second parameter to the navigation.navigate function.
 
 read the params in your screen component using route.params
