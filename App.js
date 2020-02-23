@@ -9,6 +9,7 @@
 import React from 'react';
 import {
   View,
+  Button,
   Text
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -22,11 +23,33 @@ const Stack = createStackNavigator();
 export default function App(){
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home">
+        <Stack.Navigator initialRouteName="Home" screenOptions={{
+          headerStyle: {
+            backgroundColor: 'green'
+          },
+          headerTintColor: 'white',
+            headerTitleStyle:{
+              fontWeight: 'bold'
+            }
+        }}>
+          <Stack.Screen name="Home" options={{
+            title: 'My Home',
+            headerRight: () => {
+               return <Button  title="Info from App" color="white"
+                        onPress={()=> alert('this is a button!')}/>
+            },
+            headerStyle: {
+              backgroundColor: 'orange'
+            },
+            headerTintColor: 'black',
+            headerTitleStyle:{
+              fontWeight: 'bold'
+            }
+          }}>
             { props => <HomeScreen {...props}/>}
             </Stack.Screen> 
-          <Stack.Screen name="Details" component={DetailsScreen}  options={{title: 'Details Overview'}}/>
+          <Stack.Screen name="Details" component={DetailsScreen} 
+             options={({route}) => ({title: route.params.title})}/>
         </Stack.Navigator>
       </NavigationContainer>
   )
