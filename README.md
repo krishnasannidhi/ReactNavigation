@@ -47,7 +47,7 @@ using screenOptions prop on stackNavigator will apply the configuration to all t
 
 # Tab Navigation
 
-
+# Drawer Navigation
 
 
  
