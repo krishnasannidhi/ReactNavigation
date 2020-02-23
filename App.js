@@ -14,16 +14,21 @@ import {
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeScreen from "./components/homeScreen";
 import DetailsScreen from "./components/detailsScreen";
+import HomeStackScreen from './components/homeStackScreen';
+import SettingsStackScreen from './components/settingsStackScree';
 
 const Stack = createStackNavigator();
+
+const Tab  = createBottomTabNavigator();
 
 export default function App(){
   return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{
+       {/* <Stack.Navigator initialRouteName="Home" screenOptions={{
           headerStyle: {
             backgroundColor: 'green'
           },
@@ -51,6 +56,11 @@ export default function App(){
           <Stack.Screen name="Details" component={DetailsScreen} 
              options={({route}) => ({title: route.params.title})}/>
         </Stack.Navigator>
+        */}
+        <Tab.Navigator>
+          <Tab.Screen name="Tab 1" component={HomeStackScreen}></Tab.Screen>
+          <Tab.Screen name="Tab 2" component={SettingsStackScreen}></Tab.Screen>
+        </Tab.Navigator>
       </NavigationContainer>
   )
 }
