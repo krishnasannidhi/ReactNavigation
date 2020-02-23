@@ -31,4 +31,13 @@ Run instructions for iOS:
   # Navigation between Screens
     we will use the Navigation prop to navigate between the screens that is passed down to our screen components.
    
+   # Pass Data to Routes
+   pass params to a route by putting them in an object as a second parameter to the navigation.navigate function.
+   
+   read the params in your screen component using route.params
+   
+   the navigation.setParams method allow us to update the params of the screen.
+   
+   we can also pass initial params to the screen using initialParams prop. if we didn't specify any params when navigating to the screen, the initialParams will be used.
+   
  
