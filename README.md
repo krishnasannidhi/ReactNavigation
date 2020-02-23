@@ -35,5 +35,17 @@ the navigation.setParams method allow us to update the params of the screen.
 
 we can also pass initial params to the screen using initialParams prop. if we didn't specify any params when navigating to the screen, the initialParams will be used.
 
+# Header config
+by using navigation.setOptions method we can update the options configuration for the active screen from the mounted screen component itself.
+
+3 key properties to use customizing the style of the header
+    * headerStyle: a style object that will be applied to the View that wraps the header.
+    * headerTintColor:  the back button and title both use this property as their color. 
+    * headerTitleStyle: if we want to customize the fontFamily, fontWeight and other Text style properties for the title.
+    
+using screenOptions prop on stackNavigator will apply the configuration to all the screens which belongs to that navigator.
+
+
+
 
  
