@@ -45,6 +45,8 @@ by using navigation.setOptions method we can update the options configuration fo
     
 using screenOptions prop on stackNavigator will apply the configuration to all the screens which belongs to that navigator.
 
+# Tab Navigation
+
 
 
 
